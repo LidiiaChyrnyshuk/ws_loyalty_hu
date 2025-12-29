@@ -412,7 +412,7 @@
 			.loyalty_page_benefits_list {
 				display: grid;
 				grid-template-columns: 1fr;
-				grid-template-rows: repeat(3, 1fr);
+				/* grid-template-rows: repeat(3, 1fr); */
 				grid-row-gap: 8px;
 				margin-bottom: 12px;
 			}
@@ -420,7 +420,8 @@
 				.loyalty_page_benefits_list {
 					display: grid;
 					grid-template-columns: repeat(2, 1fr);
-					grid-template-rows: repeat(2, 1fr);
+					/* grid-template-rows: repeat(2, 1fr); */
+					grid-auto-rows: auto;
 					grid-column-gap: 8px;
 					grid-row-gap: 8px;
 					margin-bottom: 16px;
@@ -437,15 +438,21 @@
 			}
 			.loyalty_page_benefits_item {
 				width: 100%;
-				height: 260px;
+				/* height: 260px; */
 				padding: 8px;
 				border-radius: 16px;
 				background-color: var(--greyLightColor) !important;
 			}
+			/* .item-1 {
+					height: 292px;
+				}
+				.item-2 {
+					height: 276px;
+				}
 			.item-3 {
-				height: 276px;
-			}
-			@media screen and (min-width: 960px) {
+				height: 308px;
+			} */
+			/* @media screen and (min-width: 960px) {
 				.item-1 {
 					height: 276px;
 				}
@@ -455,7 +462,7 @@
 				.item-3 {
 					height: 560px;
 				}
-			}
+			} */
 			.loyalty_page_benefits_item_img_wrap {
 				width: 100%;
 				height: 160px;
@@ -495,7 +502,7 @@
 				}
 			}
 			.loyalty_page_benefits_item_text_wrap {
-				padding: 8px;
+				padding: 0 8px 8px 8px;
 			}
 			.loyalty_page_benefits_item_title {
 				font-family: Stolzl, Inter, -apple-system, BlinkMacSystemFont, Segoe UI,
@@ -516,7 +523,7 @@
 				line-height: 16px !important;
 				font-weight: 400 !important;
 				color: var(--greyDarkColor) !important;
-				padding-right: 30px;
+				
 				margin: 0 !important;
 			}
 			@media screen and (min-width: 960px) {
@@ -778,7 +785,7 @@
 											Napi Cashback
 										</div>
 										<div class="loyalty_page_benefits_item_text">
-											Get a portion of your losses back every single day.
+											Minden egyes nap visszakaphatsz valamennyit az előző napi veszteségeidből. Így mindig van egy második esélyed játszani és élvezni a játékot.
 										</div>
 									</div>
 								</li>
@@ -795,8 +802,7 @@
 											Szülinapi ajándék
 										</div>
 										<div class="loyalty_page_benefits_item_text">
-											On your birthday, you'll receive a special reward based on
-											your level.
+											Születésnapodon a szinted alapján kapsz ajándékot, a VIP játékosok pedig exkluzív meglepetést kapnak.
 										</div>
 									</div>
 								</li>
@@ -818,8 +824,7 @@
 											Személyes menedzser
 										</div>
 										<p class="loyalty_page_benefits_item_text">
-											Each time you reach a new level, you'll receive a special
-											bonus as a reward for your progress.
+											Szintedtől függően személyes menedzsert kapsz, aki VIP-ként bánik veled. Bármikor kérdezhetsz, visszajelzést adhatsz vagy segítséget kérhetsz.
 										</p>
 									</div>
 								</li>
