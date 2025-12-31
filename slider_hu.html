@@ -9,6 +9,15 @@
 				padding: 0;
 				margin: 0;
 			}
+			:root {
+				--whiteColor: #ffffff;
+				--blackColor: #000000;
+				--lilaColor: #6352ff;
+				--darkLilaColor: #584ed4;
+				--greyLightColor: #f1f3f5;
+				--greyColor: #4f606f;
+				--greyDarkColor: #34414d;
+			}
 			@font-face {
 				font-display: swap;
 				font-family: Stolzl;
@@ -74,7 +83,7 @@
 			}
 
 			.loyalty_page_level_title_text {
-				color: #34414d !important;
+				color: var(--greyDarkColor) !important;
 				display: inline-flex;
 				font-family: Stolzl, Inter, -apple-system, BlinkMacSystemFont, Segoe UI,
 					Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
