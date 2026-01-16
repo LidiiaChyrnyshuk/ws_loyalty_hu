@@ -82,7 +82,7 @@
 				display: inline-flex;
 			}
 
-			.loyalty_page_level_title_text {
+			div.loyalty_page_level_title div.loyalty_page_level_title_text {
 				color: var(--greyDarkColor) !important;
 				display: inline-flex;
 				font-family: Stolzl, Inter, -apple-system, BlinkMacSystemFont, Segoe UI,
@@ -94,7 +94,7 @@
 				text-transform: uppercase !important;
 			}
 			@media screen and (min-width: 960px) {
-				.loyalty_page_level_title_text {
+				div.loyalty_page_level_title div.loyalty_page_level_title_text {
 					font-size: 20px !important;
 					line-height: 24px;
 					font-weight: 500 !important;
@@ -191,6 +191,15 @@
 			}
 			#levels-slider {
 				touch-action: pan-y;
+			}
+			/* свайп */
+			#levels-slider {
+				user-select: none;
+				cursor: grab;
+			}
+
+			#levels-slider:active {
+				cursor: grabbing;
 			}
 		</style>
 	</head>
@@ -559,14 +568,16 @@
 				let dragging = false;
 				let startPos = 0;
 
-				function dragStart(e) {
-					dragging = true;
-					track.style.transition = "none";
-					startX = e.pageX || e.touches[0].pageX;
-					startPos = position;
-					startTime = Date.now();
-					velocity = 0;
-				}
+			function dragStart(e) {
+	dragging = true;
+	track.style.transition = "none";
+
+	startX = e.pageX || (e.touches && e.touches[0].pageX);
+	startPos = position;
+	startTime = Date.now();
+	velocity = 0;
+}
+
 
 				function dragMove(e) {
 					if (!dragging) return;
@@ -671,6 +682,20 @@
 				track.addEventListener("touchmove", dragMove, { passive: false });
 				track.addEventListener("touchend", dragEnd);
 				track.addEventListener("touchcancel", dragEnd);
+
+				// --- MOUSE SWIPE ---
+track.addEventListener("mousedown", (e) => {
+	e.preventDefault();
+	dragStart(e);
+});
+
+document.addEventListener("mousemove", (e) => {
+	dragMove(e);
+});
+
+document.addEventListener("mouseup", () => {
+	dragEnd();
+});
 			});
 		</script>
 	</body>
